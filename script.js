@@ -59,15 +59,6 @@ function openPopup(title, description, images, buyButtonUrl) {
 
     // Show the slides
     showSlides(slideIndex, images);
-
-    // Previous and Next button event listeners
-    document.querySelector(".prev").addEventListener("click", () => {
-        plusSlides(-1);
-    });
-
-    document.querySelector(".next").addEventListener("click", () => {
-        plusSlides(1);
-    });
 }
 
 // Function to close the popup
