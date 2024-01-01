@@ -3,9 +3,6 @@
 // Initialize slide index
 let slideIndex = 1;
 
-// Placeholder photo URL
-const placeholderPhotoUrl = "path/to/placeholder.jpg"; // Replace with the actual URL
-
 // Function to show slides
 function showSlides(n, images) {
     const slides = document.querySelectorAll(".mySlides");
@@ -27,7 +24,7 @@ function showSlides(n, images) {
     // If images are provided, update the source of the existing image element
     if (images) {
         const popupImage = document.getElementById("popup-image");
-        popupImage.src = images[slideIndex - 1]; // Fix the indexing here
+        popupImage.src = images[0];
     }
 }
 
@@ -69,7 +66,22 @@ function openPopup(title, description, images, buyButtonUrl) {
     });
 
     document.querySelector(".next").addEventListener("click", () => {
-        plusSlides(1);
+        // Load the next photo in the slideshow
+        const nextPhotoIndex = (slideIndex % images.length) + 1;
+        const nextPhotoUrl = images[`Photo-${nextPhotoIndex}`];
+        popupImage.src = nextPhotoUrl;
+
+        // Reload the placeholder photo after a delay (adjust as needed)
+        setTimeout(() => {
+            popupImage.src = popupImage.src; // Reloads the same source, triggering a refresh
+        }, 1000); // Change the delay (in milliseconds) as needed
+    });
+
+    // Add an event listener to close the popup when clicking outside of it
+    document.addEventListener("click", (event) => {
+        if (event.target === popup) {
+            closePopup();
+        }
     });
 }
 
