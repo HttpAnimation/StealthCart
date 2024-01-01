@@ -22,9 +22,9 @@
     <div id="popup" class="popup">
         <span class="close" onclick="closePopup()">&times;</span>
         <div class="slideshow-container">
-            <!-- Add an empty image element with the id "popup-image" -->
+            <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
             <img id="popup-image" alt="Popup Image" width="263" height="224">
-            <!-- Previous and Next buttons -->
+            <div class="next" onclick="plusSlides(1)">&#10095;</div>
         </div>
         <h2 id="popup-title">Product Details</h2>
         <p id="popup-description">Description</p>
