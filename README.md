@@ -1,38 +1,38 @@
-# StealthCart
+# StealthCart - Elevate Your Dropshipping Experience
 
-StealthCart is your go-to dropshipping website for a seamless shopping experience.
+Discover unparalleled convenience in online shopping with StealthCart, your premier destination for dropshipping.
 
-## Installing
+## Installation Guide
 
-To install the raw file's for editing do the following.
-1) Open a terminal
-2) git the repo
-    ```
+Set up StealthCart effortlessly with these simple steps:
+
+1. Open a terminal.
+2. Clone the repository using Git:
+    ```bash
     git clone https://github.com/HttpAnimation/StealthCart.git
     ```
-3) open the folder in that same terminal
-    ```
+3. Navigate to the StealthCart folder:
+    ```bash
     cd StealthCart
     ```
-4) Open StealthCart in a IDE
-    ```
+4. Open StealthCart in your preferred IDE:
+    ```bash
     code .
     ```
-    if you are using a flatpak version do
-    ```
+    If using the Flatpak version, use:
+    ```bash
     flatpak run flathub com.visualstudio.code .
     ```
-
-    if you don't have a IDE if a you flatpak installed you can open a terminal and enter.
-    ```
+    If you don't have an IDE or Flatpak installed, run:
+    ```bash
     flatpak install flathub com.visualstudio.code
     ```
 
 ## Adding a Product
 
-To add a new product to StealthCart, follow these steps:
+Effortlessly integrate new products into StealthCart with the following steps:
 
-1. Open the file **products.txt** and replace its contents with the following template:
+1. Open the **products.txt** file and replace its content with this template:
 
 ```json
 [
@@ -50,9 +50,9 @@ To add a new product to StealthCart, follow these steps:
 ]
 ```
 
-Please note that the **Photo-3** and **Photo-2** links are currently broken.
+Note: The **Photo-3** and **Photo-2** links are currently broken.
 
-2. Modify the template by replacing each placeholder with the specific details of your product. For example:
+2. Customize the template by replacing placeholders with your product details:
 
 ```json
 [
@@ -70,6 +70,6 @@ Please note that the **Photo-3** and **Photo-2** links are currently broken.
 ]
 ```
 
-Ensure that you provide accurate and enticing information about your product to attract potential customers. Additionally, update the image URLs to point to the actual location of your product images.
+Ensure your product information is accurate and compelling. Update image URLs to point to your actual product images.
 
-Now you're ready to showcase your product on StealthCart!
+Now, unveil your product on StealthCart and captivate potential customers!
