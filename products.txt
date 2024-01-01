@@ -9,16 +9,5 @@
             "Photo-3": "Testing/Slideshow3.png"
         },
         "Buy-Button-URL": "https://example.com/"
-    },
-    {
-        "Name": "LEVOIT 6L Extra Large Humidifier",
-        "Main-Photo": "LEVOIT-6L-Extra-Large-Humidifier/Main.jpg",
-        "Description": "LEVOIT 6L Extra Large Humidifier for Bedroom Large Room Home, Cool Mist Last 60-Hour, Top Fill, Super Easy to Use and Clean, 360 Rotation Nozzle, Knob Control, Auto Shut Off, Quiet",
-        "Slideshow": {
-            "Photo-1": "LEVOIT-6L-Extra-Large-Humidifier/Slideshow/1.jpg",
-            "Photo-2": "LEVOIT-6L-Extra-Large-Humidifier/Slideshow/2.jpg",
-            "Photo-3": "LEVOIT-6L-Extra-Large-Humidifier/Slideshow/3.jpg"
-        },
-        "Buy-Button-URL": "https://example.com/"
     }
 ]
