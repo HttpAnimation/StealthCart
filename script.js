@@ -3,6 +3,9 @@
 // Initialize slide index
 let slideIndex = 1;
 
+// Placeholder photo URL
+const placeholderPhotoUrl = "path/to/placeholder.jpg"; // Replace with the actual URL
+
 // Function to show slides
 function showSlides(n, images) {
     const slides = document.querySelectorAll(".mySlides");
@@ -24,13 +27,13 @@ function showSlides(n, images) {
     // If images are provided, update the source of the existing image element
     if (images) {
         const popupImage = document.getElementById("popup-image");
-        popupImage.src = images;
+        popupImage.src = images[slideIndex - 1]; // Fix the indexing here
     }
 }
 
 // Function to navigate to the next or previous slide
 function plusSlides(n) {
-    showSlides((slideIndex += n));
+    showSlides((slideIndex += n), imagesArray); // Assuming imagesArray is defined elsewhere
 }
 
 // Function to open the popup with details and images
@@ -63,14 +66,10 @@ function openPopup(title, description, images, buyButtonUrl) {
     // Previous and Next button event listeners
     document.querySelector(".prev").addEventListener("click", () => {
         plusSlides(-1);
-        const images = document.getElementById("popup-image").getAttribute("src");
-        showSlides(slideIndex, images);
     });
 
     document.querySelector(".next").addEventListener("click", () => {
         plusSlides(1);
-        const images = document.getElementById("popup-image").getAttribute("src");
-        showSlides(slideIndex, images);
     });
 }
 
@@ -88,9 +87,7 @@ document.addEventListener("DOMContentLoaded", () => showSlides(slideIndex));
 function autoCycleSlides() {
     setInterval(() => {
         plusSlides(1);
-        const images = document.getElementById("popup-image").getAttribute("src");
-        showSlides(slideIndex, images);
-    }, 1); // Change the duration (in milliseconds) between slides as needed
+    }, 3000); // Change the duration (in milliseconds) between slides as needed
 }
 
 // Call the autoCycleSlides function to start automatic cycling
