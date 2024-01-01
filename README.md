@@ -18,6 +18,15 @@ To install the raw file's for editing do the following.
     ```
     code .
     ```
+    if you are using a flatpak version do
+    ```
+    flatpak run flathub com.visualstudio.code .
+    ```
+
+if you don't have a IDE if a you flatpak installed you can open a terminal and enter.
+```
+flatpak install flathub com.visualstudio.code
+```
 
 ## Adding a Product
 
