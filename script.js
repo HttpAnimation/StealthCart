@@ -59,6 +59,19 @@ function openPopup(title, description, images, buyButtonUrl) {
 
     // Show the slides
     showSlides(slideIndex, images);
+
+    // Previous and Next button event listeners
+    document.querySelector(".prev").addEventListener("click", () => {
+        plusSlides(-1);
+        const images = document.getElementById("popup-image").getAttribute("src");
+        showSlides(slideIndex, images);
+    });
+
+    document.querySelector(".next").addEventListener("click", () => {
+        plusSlides(1);
+        const images = document.getElementById("popup-image").getAttribute("src");
+        showSlides(slideIndex, images);
+    });
 }
 
 // Function to close the popup
@@ -77,7 +90,7 @@ function autoCycleSlides() {
         plusSlides(1);
         const images = document.getElementById("popup-image").getAttribute("src");
         showSlides(slideIndex, images);
-    }, 3000); // Change the duration (in milliseconds) between slides as needed
+    }, 1); // Change the duration (in milliseconds) between slides as needed
 }
 
 // Call the autoCycleSlides function to start automatic cycling
