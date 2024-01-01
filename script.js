@@ -54,8 +54,9 @@ function openPopup(title, description, images, buyButtonUrl) {
     // Set the Buy button URL
     buyButton.href = buyButtonUrl;
 
-    // Display the popup
+    // Display the popup with animation
     popup.style.display = "block";
+    popup.classList.add("show");
 
     // Show the slides
     showSlides(slideIndex, images);
@@ -88,8 +89,15 @@ function openPopup(title, description, images, buyButtonUrl) {
 // Function to close the popup
 function closePopup() {
     const popup = document.getElementById("popup");
-    popup.style.display = "none";
-    slideIndex = 1;
+
+    // Remove the show class to hide the popup with animation
+    popup.classList.remove("show");
+
+    // Hide the popup after the animation is complete
+    setTimeout(() => {
+        popup.style.display = "none";
+        slideIndex = 1;
+    }, 500); // Change the duration (in milliseconds) to match the transition duration
 }
 
 // Show the first slide when the page is ready
@@ -104,3 +112,6 @@ function autoCycleSlides() {
 
 // Call the autoCycleSlides function to start automatic cycling
 document.addEventListener("DOMContentLoaded", autoCycleSlides);
+
+// Load products when the page is ready
+document.addEventListener("DOMContentLoaded", loadProducts);
