@@ -1,0 +1,40 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StealthCart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>StealthCart</h1>
+        <p>Your go-to destination for all things stealthy!</p>
+    </header>
+
+    <section id="product-section">
+        <h2>Products</h2>
+    </section>
+
+    <div id="popup" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div class="slideshow-container">
+            <!-- Add an empty image element with the id "popup-image" -->
+            <img id="popup-image" alt="Popup Image" width="263" height="224">
+            <!-- Previous and Next buttons -->
+        </div>
+        <h2 id="popup-title">Product Details</h2>
+        <p id="popup-description">Description</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 StealthCart. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
