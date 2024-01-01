@@ -2,6 +2,23 @@
 
 StealthCart is your go-to dropshipping website for a seamless shopping experience.
 
+## Installing
+
+To install the raw file's for editing do the following.
+1) Open a terminal
+2) git the repo
+    ```
+    git clone https://github.com/HttpAnimation/StealthCart.git
+    ```
+3) open the folder in that same terminal
+    ```
+    cd StealthCart
+    ```
+4) Open StealthCart in a IDE
+    ```
+    code .
+    ```
+
 ## Adding a Product
 
 To add a new product to StealthCart, follow these steps:
