@@ -1,8 +1,10 @@
 // script.js
 
+// Initialize slide index
 let slideIndex = 1;
 
-function showSlides(n) {
+// Function to show slides
+function showSlides(n, images) {
     const slides = document.querySelectorAll(".mySlides");
 
     if (n > slides.length) {
@@ -18,12 +20,20 @@ function showSlides(n) {
     }
 
     slides[slideIndex - 1].style.display = "block";
+
+    // If images are provided, update the source of the existing image element
+    if (images) {
+        const popupImage = document.getElementById("popup-image");
+        popupImage.src = images;
+    }
 }
 
+// Function to navigate to the next or previous slide
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+    showSlides((slideIndex += n));
 }
 
+// Function to open the popup with details and images
 function openPopup(title, description, images, buyButtonUrl) {
     const popup = document.getElementById("popup");
     const popupImage = document.getElementById("popup-image");
@@ -33,11 +43,6 @@ function openPopup(title, description, images, buyButtonUrl) {
 
     // Reset slideIndex when opening a new popup
     slideIndex = 1;
-
-    // Log information to the console for debugging
-    console.log("Title:", title);
-    console.log("Description:", description);
-    console.log("Images:", images);
 
     // Set popup details
     popupTitle.textContent = "Product Name: " + title;
@@ -53,20 +58,19 @@ function openPopup(title, description, images, buyButtonUrl) {
     popup.style.display = "block";
 
     // Show the slides
-    showSlides(slideIndex);
+    showSlides(slideIndex, images);
 
     // Previous and Next button event listeners
     document.querySelector(".prev").addEventListener("click", () => {
         plusSlides(-1);
-        popupImage.src = images[slideIndex - 1];
     });
 
     document.querySelector(".next").addEventListener("click", () => {
         plusSlides(1);
-        popupImage.src = images[slideIndex - 1];
     });
 }
 
+// Function to close the popup
 function closePopup() {
     const popup = document.getElementById("popup");
     popup.style.display = "none";
@@ -75,3 +79,15 @@ function closePopup() {
 
 // Show the first slide when the page is ready
 document.addEventListener("DOMContentLoaded", () => showSlides(slideIndex));
+
+// Function to automatically cycle through slides
+function autoCycleSlides() {
+    setInterval(() => {
+        plusSlides(1);
+        const images = document.getElementById("popup-image").getAttribute("src");
+        showSlides(slideIndex, images);
+    }, 3000); // Change the duration (in milliseconds) between slides as needed
+}
+
+// Call the autoCycleSlides function to start automatic cycling
+document.addEventListener("DOMContentLoaded", autoCycleSlides);
